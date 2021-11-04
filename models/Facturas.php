@@ -66,16 +66,16 @@ class Facturas extends Conectar{
         ESTADO = ?
         WHERE (`ID` = ?);";
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1,$ID);
-        $sql->bindValue(2,$NUMERO_FACTURA);
-        $sql->bindValue(3,$ID_SOCIO);
-        $sql->bindValue(4,$FECHA_FACTURA);
-        $sql->bindValue(5,$DETALLE);
-        $sql->bindValue(6,$SUB_TOTAL);
-        $sql->bindValue(7,$TOTAL_ISV);
-        $sql->bindValue(8,$TOTAL);
-        $sql->bindValue(9,$FECHA_VENCIMIENTO);
-        $sql->bindValue(10,$ESTADO);
+        $sql->bindValue(1,$NUMERO_FACTURA);
+        $sql->bindValue(2,$ID_SOCIO);
+        $sql->bindValue(3,$FECHA_FACTURA);
+        $sql->bindValue(4,$DETALLE);
+        $sql->bindValue(5,$SUB_TOTAL);
+        $sql->bindValue(6,$TOTAL_ISV);
+        $sql->bindValue(7,$TOTAL);
+        $sql->bindValue(8,$FECHA_VENCIMIENTO);
+        $sql->bindValue(9,$ESTADO);
+        $sql->bindValue(10,$ID);
         
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
